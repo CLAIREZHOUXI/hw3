@@ -1,0 +1,41 @@
+
+
+function zamfiPatch(x, y) {
+  fill(100,0,0);
+  stroke(100);
+  rect(x, y, 100, 100);
+  
+  // blocky square
+  noFill();
+  stroke(230);
+  rect(x+20, y+20, 60, 60);
+  rect(x+40, y+40, 40, 40);
+  rect(x+20, y+60, 40, 20);
+  
+  // overlay of lines
+  stroke(0);
+  var lines = 3;
+  while (lines < 50) {
+    line(x+lines, y, x, y+lines);
+    lines = lines + 5;
+  }
+  stroke(200);
+  while (lines < 100) {
+    line(x+lines, y, x, y+lines);
+    lines = lines + 3;
+  }
+  stroke(255, 127, 0);
+  lines = 0;
+  while (lines < 50) {
+    line(x+100, y+lines, x+lines, y+100);
+    lines = lines + 4;
+  }
+  stroke(255, 200, 0);
+  while (lines < 100) {
+    line(x+100, y+lines, x+lines, y+100);
+    lines = lines + 4;
+  }
+}
+
+createCanvas(340, 340);
+  background(150);
